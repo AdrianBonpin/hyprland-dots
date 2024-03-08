@@ -1,0 +1,13 @@
+import = [
+	"~/.config/alacritty/catppuccin-mocha.toml"
+]
+[window]
+dynamic_padding = true
+
+[window.padding]
+x = 4
+y = 4
+
+[font.normal]
+family = "NotoMono Nerd Font"
+style = "Regular"

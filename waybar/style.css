@@ -1,0 +1,98 @@
+@import url("../colors.css");
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Noto Sans, 'Font Awesome 6 Free';
+    font-size: small;
+    box-shadow: none;
+    border-color: transparent;
+    border: none;
+    background: transparent;
+    transition: all 300ms;
+    color: @theme_text_color;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    padding: 2px;
+    background: @theme_bg_color;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0px 8px 4px 8px;
+}
+
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+    border-radius: 8px;
+    background: @theme_bg_color;
+}
+
+#window {
+    padding: 0px 8px;
+}
+
+#workspaces button * {
+    color: @theme_unfocused_fg_color;
+}
+
+#workspaces button.active * {
+    color: @success_color;
+}
+
+#workspaces button.urgent * {
+    color: @warning_color;
+}
+
+#workspaces button:hover * {
+    color: @borders;
+    box-shadow: none;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#workspaces,
+#clock,
+#tray,
+#network,
+#pulseaudio,
+#custom-bluetooth,
+#backlight,
+#battery {
+    padding: 0px 8px;
+}
+
+#tray menu{
+    background: @theme_bg_color;
+    padding: 6px;
+    border: 1px solid @borders;
+    border-radius: 5px;
+}
+
+#battery.charging,
+#battery.plugged:not(.full) {
+    color: @success_color;
+}
+
+@keyframes blink {
+    to {
+        color: @error_color;
+    }
+}
+
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

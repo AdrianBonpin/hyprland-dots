@@ -1,0 +1,44 @@
+@import url("../colors.css");
+
+* {
+    border: none;
+    color: @theme_text_color; 
+}
+
+window {
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-size: 12pt;
+    background-color: rgba(24, 23, 40, 0.116);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border: none;
+    text-shadow: none;
+    background-color: @theme_selected_fg_color;
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: @insensitive_bg_color;
+}
+
+button:focus {
+    background-color: @theme_base_color;
+    text-shadow: none;
+}
+
+#logout {
+    background-image: image(url("logout.png"));
+}
+
+#shutdown {
+    background-image: image(url("power.png"));
+}
+
+#reboot {
+    background-image: image(url("restart.png"));
+}

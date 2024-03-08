@@ -1,0 +1,111 @@
+{
+    "layer": "top",
+    "position": "bottom",
+
+    "width": 0,
+    "height": 0,
+
+    "spacing": 8,
+
+    "margin-left": 0,
+    "margin-top": 0,
+    "margin-bottom": 0,
+
+    "modules-left": ["hyprland/workspaces","hyprland/window"],
+
+    "modules-center": ["clock"],
+
+    "modules-right": ["custom/bluetooth","network","pulseaudio","backlight","battery"],
+    
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "": "RanArch",
+            "(.*) - (.*) - (.*) Edge": "Edge | $1",
+            "(.*) - (.*) - Visual Studio Code": "  | $1",
+            "rofi (.*)": "Run",
+            "(.*) - (.*) - Obsidian (.*)": "Obsidian | $1"
+        }
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "default": "",
+            "urgent": ""
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M - %b %d, %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#d3d7cd'><b>{}</b></span>",
+                "days": "<span color='#d3d7cd'><b>{}</b></span>",
+                "weeks": "<span color='#EEAA74'><b>W{}</b></span>",
+                "weekdays": "<span color='#EEAA74'><b>{}</b></span>",
+                "today": "<span color='#8d86c9'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{ifname} via {gwaddr}/{cidr}\n{ipaddr}",
+        "format-linked": "",
+        "format-disconnected": "",
+        "on-click": "iwgtk"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/bluetooth": {
+        "format": "",
+        "on-click": "blueman-manager",
+        "tooltip": false
+    },
+
+    "backlight": {
+        "format": " {percent}%",
+        "tooltip": false
+    },
+
+    "battery": {
+        "tooltip-format": "-{power}W\n{timeTo}",
+        "tooltip-format-charging": "Charging at +{power}W\n{timeTo}",
+        "interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}
