@@ -16,9 +16,6 @@ cp -r /wlogout ~/.config/
 echo "Installing yay"
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 
-echo "Install Catppuccin Mocha GTK Theme"
-yay -S catppuccin-gtk-theme-mocha
-
 echo "Installing pacman things"
 sudo pacman -S fprintd imv ttf-noto-nerd noto-fonts ttf-font-awesome wget --noconfirm
 
@@ -28,3 +25,11 @@ wget https://wallpapercave.com/wp/wp11445346.jpg -O ~/.config/wallpapers/wallpap
 
 echo "Installing yay things"
 yay -S dunst rofi thunderbird unzip neo tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout blueman pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl microsoft-edge-stable-bin visual-studio-code-bin eza --noconfirm
+
+echo "Install Catppuccin Mocha GTK Theme"
+yay -S catppuccin-gtk-theme-mocha
+
+echo "Set fingerprints"
+sudo fprintd-enroll -f right-thumb
+sudo fprintd-enroll -f right-index-finger
+sudo fprintd-enroll -f right-middle-finger
