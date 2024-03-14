@@ -44,6 +44,15 @@ echo "Theme | Catppuccin Mocha - GTK, Cursor"
 yay -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha --noconfirm
 clear
 
+echo "Theme | Catppuccin Mocha - SDDM"
+yay -S qt5-graphicaleffects qt5-svg qt5-quickcontrols2 --noconfirm
+git clone https://github.com/catppuccin/sddm.git
+sudo cp -r /sddm/src/catppuccin-mocha /usr/share/sddm/themes/
+echo "[Theme]
+Current=sddm-catppuccin-mocha
+" | sudo tee -a /etc/sddm.conf
+clear
+
 read -p "Set up Fingerprints? (Y/n): " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
