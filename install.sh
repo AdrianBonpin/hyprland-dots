@@ -19,7 +19,7 @@ cp -r wallpapers/ ~/
 clear
 
 echo "Folders | Create"
-mkdir ~/Pictures
+xdg-user-dirs-update
 mkdir ~/Pictures/Screenshots
 clear
 
