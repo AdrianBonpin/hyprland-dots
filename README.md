@@ -1,5 +1,4 @@
 # This is my personal Hyprland Config
-Uses:
 - Catppuccin
 - waybar
 - wlogout
