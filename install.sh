@@ -1,35 +1,58 @@
 #!/bin/bash
 
-echo "Installing Fish"
+echo "Install | Fish"
 sudo pacman -S fish
 echo /usr/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/bin/fish
+clear
 
-echo "Copy to .config"
-cp -r /alacritty ~/.config/
-cp -r /dunst ~/.config/
-cp -r /fish ~/.config/
-cp -r /hypr ~/.config/
-cp -r /rofi ~/.config/
-cp -r /wlogout ~/.config/
+echo "Install | yay"
+sudo pacman -S --noconfirm --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+clear
 
-echo "Installing yay"
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+echo "Move | Dotfiles"
+cp -r {alacritty,dunst,fish,hypr,rofi,wlogout} ~/.config/
+clear
 
-echo "Installing pacman things"
-sudo pacman -S fprintd imv ttf-noto-nerd noto-fonts ttf-font-awesome wget --noconfirm
+echo "Move | Wallpaper"
+cp -r wallpapers/ ~/
+clear
 
-echo "Setting Wallpaper"
-mkdir ~/.config/wallpapers
-wget https://wallpapercave.com/wp/wp11445346.jpg -O ~/.config/wallpapers/wallpaper-1.jpg
+echo "Folders | Create"
+mkdir ~/Pictures
+mkdir ~/Pictures/Screenshots
+clear
 
-echo "Installing yay things"
-yay -S dunst rofi thunderbird unzip neo tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout blueman pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl microsoft-edge-stable-bin visual-studio-code-bin eza --noconfirm
+echo "Install | pacman - Tools & Fonts"
+sudo pacman -S imv ttf-noto-nerd noto-fonts ttf-font-awesome wget --noconfirm
+sudo pacman -S blueman blueman-utils --noconfirm
+clear
 
-echo "Install Catppuccin Mocha GTK Theme"
-yay -S catppuccin-gtk-theme-mocha
+sudo "Install | pacman - Software"
+sudo pacan -S libreoffice obsidian obs --noconfirm
+clear
 
-echo "Set fingerprints"
-sudo fprintd-enroll -f right-thumb
-sudo fprintd-enroll -f right-index-finger
-sudo fprintd-enroll -f right-middle-finger
+echo "Install | yay - Tools & Fonts"
+yay -S dunst rofi thunderbird unzip neo tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl  eza --noconfirm
+clear
+
+echo "Install | yay - Software"
+yay -S microsoft-edge-stable-bin visual-studio-code-bin --noconfirm
+clear
+
+echo "Theme | Catppuccin Mocha - GTK, Cursor"
+yay -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha --noconfirm
+clear
+
+read -p "Set up Fingerprints? (Y/n): " response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    echo "Install | Fingerprint (fprintd)"
+    yay -S fprintd --noconfirm
+
+    echo "Set | Fingerprints"
+    sudo fprintd-enroll -f right-thumb
+    sudo fprintd-enroll -f right-index-finger
+    sudo fprintd-enroll -f right-middle-finger
+    clear
+fi

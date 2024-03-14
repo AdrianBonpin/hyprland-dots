@@ -1,12 +1,10 @@
-@import url("../colors.css");
-
 * {
     border: none;
     color: @theme_text_color; 
 }
 
 window {
-    font-family: JetBrainsMono Nerd Font, monospace;
+    font-family: Noto Sans, monospace;
     font-size: 12pt;
     background-color: rgba(24, 23, 40, 0.116);
 }
