@@ -29,7 +29,7 @@ sudo pacman -S blueman blueman-utils --noconfirm
 clear
 
 sudo "Install | pacman - Software"
-sudo pacan -S libreoffice obsidian obs --noconfirm
+sudo pacman -S libreoffice obsidian obs --noconfirm
 clear
 
 echo "Install | yay - Tools & Fonts"
