@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm --needed git base-devel && git clone https://aur.arch
 clear
 
 echo "Move | Dotfiles"
-cp -r {alacritty,dunst,fish,hypr,rofi,wlogout} ~/.config/
+cp -r dots/{alacritty,dunst,fish,hypr,rofi,wlogout} ~/.config/
 clear
 
 echo "Move | Wallpaper"
