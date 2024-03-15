@@ -12,7 +12,8 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: @theme_bg_color;
+    border-radius: 8px;
 }
 
 tooltip {
@@ -26,30 +27,27 @@ tooltip {
     margin: 0px 8px 4px 8px;
 }
 
-.modules-left > *,
-.modules-center > *,
-.modules-right > * {
-    border-radius: 8px;
-    background: @theme_bg_color;
-}
-
 #window {
     padding: 0px 8px;
 }
 
-#workspaces button * {
+#workspaces button {
+    padding: 0 0.5em;
+    margin: 0.25em;
+    transition: all ease 300ms;
     color: @theme_unfocused_fg_color;
 }
 
-#workspaces button.active * {
+#workspaces button.active {
+    width: 2em;
     color: @success_color;
 }
 
-#workspaces button.urgent * {
+#workspaces button.urgent {
     color: @warning_color;
 }
 
-#workspaces button:hover * {
+#workspaces button:hover {
     color: @borders;
     box-shadow: none;
 }

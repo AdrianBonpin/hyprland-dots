@@ -29,11 +29,11 @@ sudo pacman -S blueman blueman-utils --noconfirm
 clear
 
 sudo "Install | pacman - Software"
-sudo pacman -S libreoffice obsidian obs --noconfirm
+sudo pacman -S libreoffice obsidian thunderbird obs --noconfirm
 clear
 
 echo "Install | yay - Tools & Fonts"
-yay -S dunst rofi thunderbird unzip neo tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl  eza --noconfirm
+yay -S dunst rofi unzip tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl  eza --noconfirm
 clear
 
 echo "Install | yay - Software"

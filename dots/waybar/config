@@ -11,11 +11,11 @@
     "margin-top": 0,
     "margin-bottom": 0,
 
-    "modules-left": ["hyprland/workspaces","hyprland/window"],
+    "modules-left": ["hyprland/window"],
 
-    "modules-center": ["clock"],
+    "modules-center": ["hyprland/workspaces"],
 
-    "modules-right": ["custom/bluetooth","network","pulseaudio","backlight","battery"],
+    "modules-right": ["custom/bluetooth","network","pulseaudio","backlight","battery","clock"],
     
     "hyprland/window": {
         "format": "{}",
@@ -34,27 +34,8 @@
     },
 
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "format-icons": {
-            "default": "",
-            "urgent": ""
-        }
-    },
-
-    "clock": {
-        "format": "{:%H:%M - %b %d, %Y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "format": {
-                "months": "<span color='#d3d7cd'><b>{}</b></span>",
-                "days": "<span color='#d3d7cd'><b>{}</b></span>",
-                "weeks": "<span color='#EEAA74'><b>W{}</b></span>",
-                "weekdays": "<span color='#EEAA74'><b>{}</b></span>",
-                "today": "<span color='#8d86c9'><b><u>{}</u></b></span>"
-            }
-        }
+        "format": " ",
+        "on-click": "activate"
     },
     
     "network": {
@@ -107,5 +88,20 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+        "format": " {:%H:%M %b %d, %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#d3d7cd'><b>{}</b></span>",
+                "days": "<span color='#d3d7cd'><b>{}</b></span>",
+                "weeks": "<span color='#EEAA74'><b>W{}</b></span>",
+                "weekdays": "<span color='#EEAA74'><b>{}</b></span>",
+                "today": "<span color='#8d86c9'><b><u>{}</u></b></span>"
+            }
+        }
     }
 }
