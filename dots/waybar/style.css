@@ -39,7 +39,6 @@ tooltip {
 }
 
 #workspaces button.active {
-    width: 2em;
     color: @success_color;
 }
 

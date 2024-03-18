@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
 
     "width": 0,
     "height": 0,
@@ -34,7 +34,7 @@
     },
 
     "hyprland/workspaces": {
-        "format": " ",
+        "format": "",
         "on-click": "activate"
     },
     

@@ -11,15 +11,13 @@ sudo pacman -S --noconfirm --needed git base-devel && git clone https://aur.arch
 clear
 
 echo "Move | Dotfiles"
-cp -r dots/{alacritty,dunst,fish,hypr,rofi,wlogout} ~/.config/
-clear
+cp -ar dots/ ~/.config/
 
 echo "Move | Wallpaper"
 cp -r wallpapers/ ~/
-clear
 
 echo "Folders | Create"
-xdg-user-dirs-update
+mkdir ~/Pictures
 mkdir ~/Pictures/Screenshots
 clear
 
