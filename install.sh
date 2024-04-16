@@ -11,10 +11,10 @@ sudo pacman -S --noconfirm --needed git base-devel && git clone https://aur.arch
 clear
 
 echo "Move | Dotfiles"
-cp -ar dots/ ~/.config/
+cp -ar dots/* ~/.config/
 
 echo "Move | Wallpaper"
-cp -r wallpapers/ ~/
+cp -r wallpapers ~/
 
 echo "Folders | Create"
 mkdir ~/Pictures
@@ -31,7 +31,7 @@ sudo pacman -S libreoffice obsidian thunderbird obs --noconfirm
 clear
 
 echo "Install | yay - Tools & Fonts"
-yay -S dunst rofi unzip tlp nwg-look nwg-displays wl-paste eww cliphist hyprpaper iwgtk wlogout pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl  eza --noconfirm
+yay -S dunst rofi unzip tlp nwg-look nwg-displays wl-paste ags cliphist hyprpaper iwgtk wlogout pavucontrol hyprpicker grim slurp wpctl brillo brightnessctl eza --noconfirm
 clear
 
 echo "Install | yay - Software"
